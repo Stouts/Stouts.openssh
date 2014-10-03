@@ -125,6 +125,11 @@ Example:
     - Stouts.openssh
 
   vars:
+    openssh_server_vars:
+      PasswordAuthentication: no
+      PermitRootLogin: no
+      UsePAM: no
+      X11Forwarding: no
 
 ```
 
