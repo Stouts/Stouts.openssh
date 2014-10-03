@@ -83,7 +83,7 @@ openssh_client_defaults:      # Default values. For setup client use 'openssh_cl
   - ~/.ssh/id_dsa
   Port: 22
   Protocol: "2,1"
-  EscapeChar: ~
+  EscapeChar: "~"
   Tunnel: no
   TunnelDevice: "any:any"
   PermitLocalCommand: no
