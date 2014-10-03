@@ -2,7 +2,7 @@
 
 - include: install.deb.yml
   when: ansible_os_family == "Debian"
-  tags: [openssh-install]
+  tags: [openssh, openssh-install]
 
 - include: configure.yml
-  tags: [openssh-configure]
+  tags: [openssh, openssh-configure]
