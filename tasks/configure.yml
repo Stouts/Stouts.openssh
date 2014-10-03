@@ -1,0 +1,11 @@
+---
+
+- name: "[openssh-configure] Configure OpenSSH Server"
+  template: src=server.j2 dest=/etc/ssh/sshd_config owner=root group=root mode=0644
+  notify:
+  - openssh restart
+  when: openssh_server_install
+
+- name: "[openssh-configure] Configure OpenSSH Client"
+  template: src=client.j2 dest=/etc/ssh/ssh_config owner=root group=root mode=0644
+  when: openssh_client_install

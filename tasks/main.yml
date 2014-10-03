@@ -1,0 +1,5 @@
+---
+
+- include: openssh.yml
+  when: openssh_enabled
+  tags: [openssh]
