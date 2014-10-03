@@ -41,7 +41,6 @@ openssh_server_defaults:      # Default values. For setup server use 'openssh_se
   ChallengeResponseAuthentication: no
   PasswordAuthentication: yes
   KerberosAuthentication: no
-  KerberosGetAFSToken: no
   KerberosOrLocalPasswd: yes
   KerberosTicketCleanup: yes
   GSSAPIAuthentication: no

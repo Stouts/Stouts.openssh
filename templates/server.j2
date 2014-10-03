@@ -72,7 +72,6 @@ PasswordAuthentication {{ 'yes' if openssh_server_vars.PasswordAuthentication|de
 
 # Kerberos options
 KerberosAuthentication {{ 'yes' if openssh_server_vars.KerberosAuthentication|default(openssh_server_defaults.KerberosAuthentication) else 'no' }}
-KerberosGetAFSToken {{ 'yes' if openssh_server_vars.KerberosGetAFSToken|default(openssh_server_defaults.KerberosGetAFSToken) else 'no' }}
 KerberosOrLocalPasswd {{ 'yes' if openssh_server_vars.KerberosOrLocalPasswd|default(openssh_server_defaults.KerberosOrLocalPasswd) else 'no' }}
 KerberosTicketCleanup {{ 'yes' if openssh_server_vars.KerberosTicketCleanup|default(openssh_server_defaults.KerberosTicketCleanup) else 'no' }}
 
