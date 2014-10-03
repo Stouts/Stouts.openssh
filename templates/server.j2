@@ -104,3 +104,10 @@ Subsystem {{ openssh_server_vars.Subsystem|default(openssh_server_defaults.Subsy
 # and ChallengeResponseAuthentication to 'no'.
 UsePAM {{ 'yes' if openssh_server_vars.UsePAM|default(openssh_server_defaults.UsePAM) else 'no' }}
 UseDNS {{ 'yes' if openssh_server_vars.UseDNS|default(openssh_server_defaults.UseDNS) else 'no' }}
+
+# Additional options
+{% for name, value in openssh_server_vars.items() %}
+{% if not name in openssh_server_defaults %}
+{{ name }} {{ value }}
+{% endif %}
+{% endfor %}

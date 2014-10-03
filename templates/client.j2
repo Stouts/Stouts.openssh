@@ -31,9 +31,6 @@ IdentityFile {{ path }}
 {% endfor %}
 Port {{ openssh_client_vars.Port|default(openssh_client_defaults.Port) }}
 Protocol {{ openssh_client_vars.Protocol|default(openssh_client_defaults.Protocol) }}
-Cipher {{ openssh_client_vars.Cipher|default(openssh_client_defaults.Cipher) }}
-Ciphers {{ openssh_client_vars.Cipher|default(openssh_client_defaults.Cipher) }}
-MACs {{ openssh_client_vars.MACs|default(openssh_client_defaults.MACs) }}
 EscapeChar {{ openssh_client_vars.EscapeChar|default(openssh_client_defaults.EscapeChar) }}
 Tunnel {{ 'yes' if openssh_client_vars.Tunnel|default(openssh_client_defaults.Tunnel) else 'no' }}
 TunnelDevice {{ openssh_client_vars.TunnelDevice|default(openssh_client_defaults.TunnelDevice) }}
@@ -45,3 +42,10 @@ SendEnv {{ env }}
 HashKnownHosts {{ 'yes' if openssh_client_vars.HashKnownHosts|default(openssh_client_defaults.HashKnownHosts) else 'no' }}
 GSSAPIAuthentication {{ 'yes' if openssh_client_vars.GSSAPIAuthentication|default(openssh_client_defaults.GSSAPIAuthentication) else 'no' }}
 GSSAPIDelegateCredentials {{ 'yes' if openssh_client_vars.GSSAPIDelegateCredentials|default(openssh_client_defaults.GSSAPIDelegateCredentials) else 'no' }}
+
+# Additional options
+{% for name, value in openssh_client_vars.items() %}
+{% if not name in openssh_client_defaults %}
+{{ name }} {{ value }}
+{% endif %}
+{% endfor %}

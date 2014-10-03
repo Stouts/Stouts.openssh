@@ -95,9 +95,6 @@ openssh_client_defaults:      # Default values. For setup client use 'openssh_cl
   - ~/.ssh/id_dsa
   Port: 22
   Protocol: "2,1"
-  Cipher: "3des"
-  Ciphers: "aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-cbc,3des-cbc"
-  MACs: "hmac-md5,hmac-sha1,umac-64@openssh.com,hmac-ripemd160"
   EscapeChar: ~
   Tunnel: no
   TunnelDevice: "any:any"
