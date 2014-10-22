@@ -1,7 +1,9 @@
 Stouts.openssh
 =============
 
-[![Build Status](https://travis-ci.org/Stouts/Stouts.openssh.png)](https://travis-ci.org/Stouts/Stouts.openssh)
+[![Build Status](http://img.shields.io/travis/Stouts/Stouts.openssh.svg?style=flat-square)](https://travis-ci.org/Stouts/Stouts.openssh)
+[![Galaxy](http://img.shields.io/badge/galaxy-Stouts.openssh-blue.svg?style=flat-square)](https://galaxy.openssh.com/list#/roles/1863)
+[![Tag](http://img.shields.io/github/tag/Stouts/Stouts.openssh.svg?style=flat-square)]()
 
 Ansible role which installs and setups OpenSSH client and server.
 
