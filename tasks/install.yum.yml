@@ -1,0 +1,9 @@
+---
+
+- name: "[openssh-install] Install OpenSSH Server"
+  yum: name=openssh-server
+  when: openssh_server_install
+
+- name: "[openssh-install] Install OpenSSH Client"
+  yum: name=openssh-clients
+  when: openssh_client_install

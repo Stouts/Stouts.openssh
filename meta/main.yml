@@ -14,5 +14,11 @@ galaxy_info:
   - name: Debian
     versions:
     - all
+  - name: RedHat
+    versions:
+    - all
+  - name: CentOS
+    versions:
+    - all
   categories:
   - system

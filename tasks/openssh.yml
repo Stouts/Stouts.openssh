@@ -1,7 +1,13 @@
 ---
 
+- include_vars: "{{ansible_os_family}}.yml"
+
 - include: install.deb.yml
   when: ansible_os_family == "Debian"
+  tags: [openssh, openssh-install]
+
+- include: install.yum.yml
+  when: ansible_os_family == "RedHat"
   tags: [openssh, openssh-install]
 
 - include: configure.yml
