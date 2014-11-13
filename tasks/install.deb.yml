@@ -1,9 +1,9 @@
 ---
 
-- name: "[openssh-install] Install OpenSSH Server"
+- name: "[openssh-install] Install OpenSSH Server (Debian)"
   apt: pkg=openssh-server
   when: openssh_server_install
 
-- name: "[openssh-install] Install OpenSSH Client"
+- name: "[openssh-install] Install OpenSSH Client (Debian)"
   apt: pkg=openssh-client
   when: openssh_client_install
