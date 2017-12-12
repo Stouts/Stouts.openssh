@@ -1,5 +1,5 @@
 ---
 
-- include: openssh.yml
+- import_tasks: openssh.yml
   when: openssh_enabled
   tags: [openssh]
