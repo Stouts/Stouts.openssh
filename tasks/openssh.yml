@@ -10,5 +10,9 @@
   when: ansible_os_family == "RedHat"
   tags: [openssh, openssh-install]
 
+- include: install.portage.yml
+  when: ansible_os_family == "Gentoo"
+  tags: [openssh, openssh-install]
+
 - include: configure.yml
   tags: [openssh, openssh-configure]

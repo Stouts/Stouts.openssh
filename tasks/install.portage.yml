@@ -1,0 +1,5 @@
+---
+
+- name: "[openssh-install] Install OpenSSH (Gentoo)"
+  portage: package="net-misc/openssh"
+  when: openssh_server_install
