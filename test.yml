@@ -1,8 +1,8 @@
 - hosts: all
   tasks:
-    - import_tasks: tasks/main.yml
+    - include_tasks: tasks/main.yml
   handlers:
-    - import_tasks: handlers/main.yml
+    - include_tasks: handlers/main.yml
   vars_files:
     - defaults/main.yml
     - .travis.yml
