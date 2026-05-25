@@ -1,18 +1,18 @@
 ---
 
-- include_vars: "{{ansible_os_family}}.yml"
+- ansible.builtin.include_vars: "{{ ansible_facts['os_family'] }}.yml"
 
-- include_tasks: install.deb.yml
-  when: ansible_os_family == "Debian"
+- ansible.builtin.include_tasks: install.deb.yml
+  when: ansible_facts['os_family'] == "Debian"
   tags: [openssh, openssh-install]
 
-- include_tasks: install.yum.yml
-  when: ansible_os_family == "RedHat"
+- ansible.builtin.include_tasks: install.yum.yml
+  when: ansible_facts['os_family'] == "RedHat"
   tags: [openssh, openssh-install]
 
-- include_tasks: install.portage.yml
-  when: ansible_os_family == "Gentoo"
+- ansible.builtin.include_tasks: install.portage.yml
+  when: ansible_facts['os_family'] == "Gentoo"
   tags: [openssh, openssh-install]
 
-- include_tasks: configure.yml
+- ansible.builtin.include_tasks: configure.yml
   tags: [openssh, openssh-configure]

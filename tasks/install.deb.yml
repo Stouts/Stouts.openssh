@@ -1,9 +1,11 @@
 ---
 
 - name: "[openssh-install] Install OpenSSH Server (Debian)"
-  apt: pkg=openssh-server
+  ansible.builtin.apt:
+    name: openssh-server
   when: openssh_server_install
 
 - name: "[openssh-install] Install OpenSSH Client (Debian)"
-  apt: pkg=openssh-client
+  ansible.builtin.apt:
+    name: openssh-client
   when: openssh_client_install

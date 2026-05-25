@@ -5,5 +5,3 @@
     file: openssh.yml
     apply:
       tags: openssh
-  when: openssh_enabled
-  tags: [openssh]

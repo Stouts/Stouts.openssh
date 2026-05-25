@@ -1,9 +1,11 @@
 ---
 
 - name: "[openssh-install] Install OpenSSH Server (RedHat)"
-  yum: name=openssh-server
+  ansible.builtin.yum:
+    name: openssh-server
   when: openssh_server_install
 
 - name: "[openssh-install] Install OpenSSH Client (RedHat)"
-  yum: name=openssh-clients
+  ansible.builtin.yum:
+    name: openssh-clients
   when: openssh_client_install

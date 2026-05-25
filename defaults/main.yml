@@ -1,19 +1,19 @@
 ---
 
-openssh_enabled: yes          # Enable the role
+openssh_enabled: true           # Enable the role
 
-openssh_client_install: yes   # Install OpenSSH Client
-openssh_server_install: yes   # Install OpenSSH Server
+openssh_client_install: true    # Install OpenSSH Client
+openssh_server_install: true    # Install OpenSSH Server
 
-openssh_server_vars: {}       # Use this variable for setup server
-                              # Ex. openssh_server_vars:
-                              #       PasswordAuthentication: no
+openssh_server_vars: {}         # Use this variable for setup server
+                                # Ex. openssh_server_vars:
+                                #       PasswordAuthentication: no
 
-openssh_client_vars: {}       # Use this variable for setup client
-                              # Ex. openssh_client_vars:
-                              #       ForwardAgent: yes
+openssh_client_vars: {}         # Use this variable for setup client
+                                # Ex. openssh_client_vars:
+                                #       ForwardAgent: yes
 
-openssh_server_defaults:      # Default values. For setup server use 'openssh_server_vars' variable above
+openssh_server_defaults:        # Default values. For setup server use 'openssh_server_vars' variable above
   AcceptEnv: LANG LC_*
   AllowGroups: []
   AllowUsers: []
@@ -22,9 +22,9 @@ openssh_server_defaults:      # Default values. For setup server use 'openssh_se
   GSSAPIAuthentication: no
   GSSAPICleanupCredentials: yes
   HostKey:
-  - /etc/ssh/ssh_host_dsa_key
-  - /etc/ssh/ssh_host_ecdsa_key
-  - /etc/ssh/ssh_host_rsa_key
+    - /etc/ssh/ssh_host_dsa_key
+    - /etc/ssh/ssh_host_ecdsa_key
+    - /etc/ssh/ssh_host_rsa_key
   HostbasedAuthentication: no
   IgnoreRhost: yes
   IgnoreUserKnownHosts: yes
@@ -32,7 +32,7 @@ openssh_server_defaults:      # Default values. For setup server use 'openssh_se
   KerberosOrLocalPasswd: yes
   KerberosTicketCleanup: yes
   KeyRegenerationInterval: 3600
-  ListenAddress: [ "0.0.0.0", "::"]
+  ListenAddress: ["0.0.0.0", "::"]
   LogLevel: INFO
   LoginGraceTime: 120
   MaxStartups: "10:30:60"
@@ -59,7 +59,7 @@ openssh_server_defaults:      # Default values. For setup server use 'openssh_se
   X11Forwarding: yes
 
 # Client options
-openssh_client_defaults:      # Default values. For setup client use 'openssh_client_vars' variable above
+openssh_client_defaults:        # Default values. For setup client use 'openssh_client_vars' variable above
   AddressFamily: any
   BatchMode: no
   CheckHostIP: yes
@@ -75,9 +75,9 @@ openssh_client_defaults:      # Default values. For setup client use 'openssh_cl
   Host: "*"
   HostbasedAuthentication: no
   IdentityFile:
-  - ~/.ssh/identity
-  - ~/.ssh/id_rsa
-  - ~/.ssh/id_dsa
+    - ~/.ssh/identity
+    - ~/.ssh/id_rsa
+    - ~/.ssh/id_dsa
   EscapeChar: "~"
   PasswordAuthentication: yes
   PermitLocalCommand: no
@@ -86,7 +86,7 @@ openssh_client_defaults:      # Default values. For setup client use 'openssh_cl
   RSAAuthentication: yes
   RhostsRSAAuthentication: no
   SendEnv:
-  - LANG LC_*
+    - LANG LC_*
   StrictHostKeyChecking: ask
   Tunnel: no
   TunnelDevice: "any:any"

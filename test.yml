@@ -1,8 +1,8 @@
 - hosts: all
   tasks:
-    - include_tasks: tasks/main.yml
+    - ansible.builtin.include_tasks: tasks/main.yml
   handlers:
-    - include_tasks: handlers/main.yml
+    - ansible.builtin.include_tasks: handlers/main.yml
   vars_files:
     - defaults/main.yml
     - .travis.yml
