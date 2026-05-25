@@ -1,5 +1,7 @@
 ---
 
-- ansible.builtin.include_tasks: openssh.yml
-  when: openssh_enabled
-  tags: [openssh]
+- name: Setup OpenSSH
+  ansible.builtin.include_tasks:
+    file: openssh.yml
+    apply:
+      tags: openssh
